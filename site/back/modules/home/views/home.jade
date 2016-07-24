@@ -1,0 +1,38 @@
+section.home-container
+  div.banner
+    div.contents
+      div.texts
+        h1.title Aprender abre um mundo de possibilidades
+        h3.phrase Os melhores cursos, palestras e workshops nas mais diversas áreas do conhecimento especialmente para você. Venha para o Coletivo!
+
+      div.buttons
+        button.knowmore(data-ng-click="goToCoursesCategory()") Conheça nossos cursos
+        button.cores(data-ng-click="goToCores()") Núcleos do Coletivo
+    div.foreground
+    img.image(data-ng-src="/build/images/{{device}}/home/home-banner.jpg",
+              alt="Banner Home")
+
+section.courses
+  div.main-title
+    h2.title Cursos em destaque
+    div.title-divisor
+  div.container
+    course-item(data-ng-repeat="course in ::featuredCourses track by course._id",
+                data-course="course")
+section.news
+  div.main-title
+    h2.title Novidades
+    div.title-divisor
+  news-item(data-ng-repeat="new in ::news track by new._id",
+            data-new="new")
+
+section.coworking
+  div.main-title
+    h2.title Coworking
+    div.title-divisor
+  div.imagescontainer
+    div.item(data-ng-repeat="image in coworking.images track by image._id")
+      img.image(data-ng-src="/build/images/default/home/{{image.name}}")
+  div.text {{coworking.text}}
+  div.link
+    a(href="http://locprime.com.br/", target="_blank") Saiba mais

@@ -1,0 +1,23 @@
+section.register-container
+  div.main-title
+    h2.title Cadastro do aluno
+    div.title-divisor
+
+  div.getdata
+    div.title Você também pode logar com
+    div.grid
+      div.google(data-ng-click="googleLogin()")
+        svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-google")
+        div.label Google
+      div.label ou
+      div.facebook(data-ng-click="fbLogin()")
+        svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-facebook")
+        div.label Facebook
+
+  register-form-short(data-user="user", data-save="save(user)")
+
+show-message(data-show="message.show",
+             data-nivel="message.nivel",
+             data-text="message.text")

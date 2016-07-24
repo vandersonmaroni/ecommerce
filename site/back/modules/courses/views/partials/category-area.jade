@@ -1,0 +1,9 @@
+div.categoria-item(data-ng-click="goToCourses(category)",
+                   data-ng-style="{background: category.backgroundColor}",
+                   data-ng-class="{'categoria-item_disabled': category.coursesEmpty}")
+  div.title
+    h3 {{category.name}}
+    div.message(data-ng-if="category.coursesEmpty") Não há cursos para esta categoria neste momento
+  svg.imagecover(viewBox="0 0 48 48")
+    use(xlink:href="{{category.imageCover}}")
+  div.phrase(data-ng-if="!mobile") {{category.phrase}}

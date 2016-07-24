@@ -1,0 +1,45 @@
+.top-bar
+  width 100%
+  height $topBarMenuHeightMobile
+  position fixed
+  top 0
+  left 0
+  transition all 0.2s linear
+  z-index 20
+  @media (min-width: em(800px))
+    height $topBarMenuHeightDesktop
+
+  > .logo
+      width 141px
+      height 48px
+      position absolute
+      top 7px
+      left 5px
+      @media (min-width: em(800px))
+        top 10px
+        left 20px
+
+    > .link
+      display block
+
+    > .search
+      position absolute
+      right 16px
+      top 16px
+      cursor pointer
+      @media (min-width: em(800px))
+        right 20px
+        top 20px
+
+      > .icon
+        width 25px
+        height 25px
+        fill #fff
+        transform rotate(90deg)
+        &:hover
+          fill $darkPrimaryColor
+          cursor pointer
+
+.topbarbackground
+  background $primaryColor
+  opacity 0.9

@@ -1,0 +1,43 @@
+section.page-container
+  div.banner
+    div.text-banner-with-title
+      h1.title(data-ng-bind="course.category.name")
+      h2.phrase(data-ng-bind="course.category.pageCapition")
+    div.foreground
+    img.image(data-ng-src="/build/images/{{device}}/courses/{{course.category.pageImageBanner}}", alt="Banner Courso categoria")
+
+section.course-detailing
+  div.name(data-ng-bind="course.name")
+  div.container
+    div.containerimage
+      img.image(data-ng-src="/build/images/default/courses/{{course.image}}", alt="Banner Courso")
+
+    div.datasell
+      div.section
+        span.label Categoria
+        span.name(data-ng-bind="course.category.name")
+      div.section
+        span.label Início
+        span.name(data-ng-bind="(course.class.beginDate | date: dd/MMM/yyyy)")
+      div.section
+        span.label Duração
+        span.name(data-ng-bind="course.class.duration")
+      div.logospayments
+        img.logo(data-ng-src="/build/images/default/layout/logo_pagseguro.png")
+      div(data-ng-if="logged() && !stockOut")
+        include buy-component
+      div(data-ng-if="!logged()")
+        include not-logged
+      div(data-ng-if="logged() && stockOut")
+        include stock-out
+
+  div.main-title
+    h2.title Sobre o curso
+    div.title-divisor
+  div.container
+
+  div.detailing(data-ng-bind-html="course.description")
+
+show-message(data-show="message.show",
+             data-nivel="message.nivel",
+             data-text="message.text")

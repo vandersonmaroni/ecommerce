@@ -1,0 +1,12 @@
+div(data-ng-controller="HeaderController", ng-cloak)
+  search(data-show-modal="showSearch", data-is-desktop="isDesktop")
+  header.top-bar(data-menu-scroll, data-core-color, data-route="routeParams")
+    div.logo
+      a.link(data-ng-href="{{systemUri.home()}}", title="Ir para o início")
+        img.image(src="/build/images/default/layout/coletivo-logo.png", alt="Logo Coletivo")
+
+    include menu
+
+    div.search(data-ng-click="showSearchModal()", title="Faça uma pesquisa")
+      svg.icon(viewBox="0 0 48 48")
+        use(xlink:href="/build/images/default/layout/icons.svg#icon-search")

@@ -1,0 +1,118 @@
+.search-container
+  width 100%
+  height 100%
+  background #000
+  position fixed
+  z-index 21
+  top 0
+  left 0
+  opacity .98
+  visibility visible
+  transition all 0.2s linear
+  padding 2% 5%
+  overflow-y auto
+  @media (min-width: em(800px))
+    padding 2% 8%
+
+  > .close
+    width 35px
+    height 35px
+    fill #FFF
+    position absolute
+    right 15px
+    top 25px
+    cursor pointer
+
+  > .title
+    width 100%
+    font-size em(30px)
+    color #FFF
+    @media (min-width: em(800px))
+      font-size em(50px)
+
+  > .container
+    width 100%
+    display flex
+    justify-content space-between
+
+    > .inputtext
+      margin-top 0
+      @media (min-width: em(800px))
+        width 95%
+
+    > .buttoncontainer
+      width 5%
+      height 50px
+      background none
+      outline none
+
+      > .button
+        width 30px
+        height 30px
+        fill #FFF
+        transform rotate(90deg)
+        margin-top 13px
+        margin-left 15px
+        transition all .2s linear
+        &:hover
+          transition all .2s linear
+          transform rotate(90deg) scale(1.1)
+          cursor pointer
+
+  > .messageValidation
+    color #fff
+    font-size em(20px)
+    margin-top 10px
+
+  > .result
+    width 100%
+    margin-top 30px
+    @media (min-width: em(800px))
+      margin-top 50px
+
+    > .title
+      color #fff
+      font-size em(20px)
+      @media (min-width: em(800px))
+        font-size em(24px)
+
+    > .divisor
+      width 100%
+      height 1px
+      background #fff
+      margin-top 10px
+
+    > .container
+      width 100%
+      margin-top 30px
+
+      > .list
+        width 100%
+
+        > .item
+          color #ccc
+          font-size em(22px)
+          margin-bottom 25px
+          background #222
+          padding 8%
+          @media (min-width: em(800px))
+            font-size em(25px)
+            padding 1.7% 3%
+          &:hover
+            color #fff
+            cursor pointer
+            text-decoration underline
+            transition all 0.2s linear
+
+          > .itemtype
+            font-family "roboto light"
+            font-size em(9px)
+            text-decoration none !important
+            @media (min-width: em(800px))
+              font-size em(11px)
+
+
+.search-container.ng-hide
+  opacity 0
+  visibility hidden
+  transition all 0.2s linear

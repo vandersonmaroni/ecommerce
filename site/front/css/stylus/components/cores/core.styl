@@ -1,0 +1,106 @@
+.cores
+  @media(min-width: em(800px))
+    display flex
+    justify-content space-around
+    flex-wrap wrap
+
+.core-container
+  width 100%
+  @extend .page-section
+  font-family "roboto light"
+  margin-bottom 30px
+  @media(min-width: em(800px))
+    margin-bottom 100px
+    width 45%
+    padding 0 2%
+    position relative
+
+  > .title
+    font-size em(25px)
+    @media(min-width: em(800px))
+      font-size em(35px)
+    @media(min-width: em(1440px))
+      font-size em(40px)
+
+  > .container
+    > .media
+      width 100%
+
+      > .video
+        width 100%
+
+      > .image
+        width 100%
+
+    > .description
+      margin-top 10px
+      @media(min-width: em(800px))
+        margin-top 0
+
+      > .container
+
+        > .text
+          font-size em(18px)
+          color $primaryTextColor
+          line-height 27px
+          margin-top 30px
+          @media(min-width: em(1366px))
+            font-size em(20px)
+          @media(min-width: em(1440px))
+            line-height 30px
+            font-size em(22px)
+          @media(min-width: em(1600px))
+            font-size em(23px)
+            line-height 33px
+
+          > .title
+            font-weight bold
+            color $primaryTextColor
+
+          > .list
+            > .item
+              font-size 80%
+
+          > .bold
+            font-weight bold
+
+      > .grid
+        @media(min-width: em(700px))
+          display flex
+          position absolute
+          justify-content space-between
+          flex-direction row-reverse
+          margin-top 10px
+          bottom -80px
+
+        > .logo
+          width 231px
+          height 69px
+          margin 30px auto 30px
+          @media(min-width: em(700px))
+            margin 0
+            margin-left 100px
+          @media(min-width: em(1440px))
+            margin-left 200px
+          @media(min-width: em(1600px))
+            margin-left 230px
+
+          > img
+            width 100%
+
+        > .buttoncontainer
+          width 200px
+          height 50px
+          margin 0 auto
+          @media(min-width: em(700px))
+            margin 0
+            margin-top 12px
+
+          > .button
+            color #FFF
+            width 200px
+            height 50px
+            transition all .2s linear
+            &:hover
+              transform: scale(1.05)
+              transition all .2s linear

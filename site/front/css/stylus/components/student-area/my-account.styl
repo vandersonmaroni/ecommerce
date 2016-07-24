@@ -1,0 +1,16 @@
+.myaccount-container
+  width 100%
+  margin-top $topBarMenuHeightDesktop + 20px
+  @extend .page-section
+  font-family "roboto light"
+  @media(min-width: em(800px))
+    padding 0 8%
+  @media(min-width: em(1366px))
+    margin-top $topBarMenuHeightDesktop + 70px
+
+  > .info
+    width 100%
+    text-align center
+    font-size em(14px)
+    @media(min-width: em(800px))
+      font-size em(20px)

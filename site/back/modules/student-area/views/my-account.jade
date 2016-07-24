@@ -1,0 +1,13 @@
+section.myaccount-container
+  div.main-title
+    h2.title Minha conta
+    div.title-divisor
+
+  div.info Para alterar os dados será necessário o preenchimento completo do formulário.
+
+  register-form(data-user="user", data-save="save(user)",
+                data-hide-fields="true")
+
+show-message(data-show="message.show",
+             data-nivel="message.nivel",
+             data-text="message.text")

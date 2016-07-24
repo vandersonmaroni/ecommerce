@@ -1,0 +1,123 @@
+section.page-container
+  div.banner
+    div.text
+      h2.phrase Dúvidas, críticas ou sugestões?
+    div.foreground
+    img.image(data-ng-src="/build/images/{{device}}/contact/contact-banner.jpg", alt="Banner Contato")
+
+section.contact-container
+  div.main-title
+    h2.title Contato
+    div.title-divisor
+
+  section.infos
+    div.item
+      svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-email")
+      div.label contato@coletivoeducacao.com.br
+    div.item
+      svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-contact")
+      div.label WhatsApp: (11) 94472-3517
+
+    div.item
+      svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-cnpj")
+      div.label CNPJ: 23.542.316/0001-00
+
+  form.form-contact(novalidate, name="contactForm", data-ng-submit="send(body)")
+    div.inputcontainer_middle
+      label(for="name") Nome
+      input.inputtext_default(type="text",
+                              name="name",
+                              data-ng-model="body.name",
+                              placeholder="Ex: João da Silva",
+                              data-mask="~",
+                              data-mask-validate="false",
+                              data-mask-clean="true",
+                              data-mask-restrict="reject",
+                              data-mask-repeat="100",
+                              minlength="5",
+                              required)
+      div.messages-container(data-ng-messages="contactForm.name.$error",
+                             data-ng-if="contactForm.name.$touched && !submitted")
+        div(ng-messages-include="partials/main/messages-validation")
+
+    div.inputcontainer_middle
+      label(for="email") E-mail
+      input.inputtext_default(type="email",
+                              name="email",
+                              data-ng-model="body.email",
+                              placeholder="Ex: joao.silva@contato.com",
+                              data-mask="+",
+                              data-mask-validate="false",
+                              data-mask-clean="true",
+                              data-mask-restrict="reject",
+                              data-mask-repeat="100",
+                              minlength="5",
+                              required)
+      div.messages-container(data-ng-messages="contactForm.email.$error",
+                             data-ng-if="contactForm.email.$touched && !submitted")
+        div(ng-messages-include="partials/main/messages-validation")
+
+    div.inputcontainer_middle
+      label(for="cell") Celular
+      input.inputtext_default(type="text",
+                              name="cell",
+                              data-ng-model="user.cell",
+                              placeholder="(00) 00000-0000",
+                              data-mask="(99) 99999-9999",
+                              data-mask-validate="false",
+                              data-mask-clean="true",
+                              data-mask-restrict="reject",
+                              minlength="15",
+                              required)
+      div.messages-container(data-ng-messages="contactForm.cell.$error",
+                             data-ng-if="contactForm.cell.$touched && !submitted")
+        div(ng-messages-include="partials/main/messages-validation")
+
+    div.inputcontainer_middle
+      label(for="subject") Assunto
+      input.inputtext_default(type="text",
+                              name="subject",
+                              data-ng-model="body.subject",
+                              placeholder="Ex: Dúvida sobre cobrança",
+                              data-mask="~",
+                              data-mask-validate="false",
+                              data-mask-clean="true",
+                              data-mask-restrict="reject",
+                              data-mask-repeat="100",
+                              minlength="5",
+                              required)
+      div.messages-container(data-ng-messages="contactForm.subject.$error",
+                             data-ng-if="contactForm.subject.$touched && !submitted")
+        div(ng-messages-include="partials/main/messages-validation")
+
+    div.inputcontainer_full
+      label(for="message") Mensagem
+      textarea.textarea_default(type="text",
+                              name="message",
+                              data-ng-model="body.message",
+                              placeholder="Escreva sua mensagem...",
+                              data-mask="&",
+                              data-mask-validate="false",
+                              data-mask-clean="true",
+                              data-mask-restrict="reject",
+                              data-mask-repeat="500",
+                              minlength="10",
+                              required)
+      div.messages-container(data-ng-messages="contactForm.message.$error",
+                             data-ng-if="contactForm.message.$touched && !submitted")
+        div(ng-messages-include="partials/main/messages-validation")
+
+    div.button
+      input.inputsubmit(type="submit",
+                        value="Enviar"
+                        data-ng-disabled="contactForm.$invalid || buttonDisabled",
+                        data-ng-class="{'inputsubmit_disabled': contactForm.$invalid || buttonDisabled}")
+
+    div.message {{emailMessage}}
+
+show-message(data-show="message.show",
+             data-nivel="message.nivel",
+             data-text="message.text")

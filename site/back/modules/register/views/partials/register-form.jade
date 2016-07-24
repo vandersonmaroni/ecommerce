@@ -1,0 +1,298 @@
+form.form-register(novalidate, name="registerForm", data-ng-submit="save(user)")
+  div.title Dados pessoais
+  div.inputcontainer_full(data-ng-class="{'inputcontainer_middle': user.hasEmail}")
+    label(for="name") Nome Completo
+    input.inputtext_default(type="text",
+                            name="name",
+                            data-ng-model="user.name",
+                            placeholder="Ex: João da Silva",
+                            data-mask="~",
+                            data-mask-validate="false",
+                            data-mask-clean="true",
+                            data-mask-restrict="reject",
+                            data-mask-repeat="100",
+                            minlength="5",
+                            required)
+    div.messages-container(data-ng-messages="registerForm.name.$error",
+                           data-ng-if="registerForm.name.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.inputcontainer_middle(data-ng-if="user.hasEmail")
+    label(for="email") E-mail
+    input.inputtext_default(type="email",
+                            name="email",
+                            data-ng-model="user.email",
+                            placeholder="Ex: joao.silva@contato.com",
+                            data-mask="+",
+                            data-mask-validate="false",
+                            data-mask-clean="true",
+                            data-mask-restrict="reject",
+                            data-mask-repeat="100",
+                            minlength="5",
+                            required)
+    div.messages-container(data-ng-messages="registerForm.email.$error",
+                           data-ng-if="registerForm.email.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.inputcontainer_middle(data-ng-if="user.hasCpf")
+    label(for="cpf") CPF
+    input.inputtext_default(type="text",
+                            name="cpf",
+                            data-ng-model="user.cpf",
+                            placeholder="000.000.000-00",
+                            data-mask="999.999.999-99",
+                            data-mask-validate="false",
+                            data-mask-clean="true",
+                            data-mask-restrict="reject",
+                            data-mask-repeat="1",
+                            minlength="14",
+                            cpfvalid,
+                            cpfexists,
+                            required)
+    div.messages-container(data-ng-messages="registerForm.cpf.$error",
+                           data-ng-if="registerForm.cpf.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.inputcontainer_middle
+    label(for="rg") RG
+    input.inputtext_default(type="text",
+                            name="rg",
+                            data-ng-model="user.rg",
+                            placeholder="000000000",
+                            data-mask="9",
+                            data-mask-validate="false",
+                            data-mask-clean="true",
+                            data-mask-restrict="reject",
+                            data-mask-repeat="10",
+                            minlength="9",
+                            required)
+    div.messages-container(data-ng-messages="registerForm.rg.$error",
+                           data-ng-if="registerForm.rg.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.inputcontainer_middle
+    label(for="dateBirth") Data de Nascimento
+    input.inputtext_default(type="date",
+                            name="dateBirth",
+                            data-ng-model="user.dateBirth",
+                            required)
+    div.messages-container(data-ng-messages="registerForm.dateBirth.$error",
+                           data-ng-if="registerForm.dateBirth.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.inputcontainer_middle
+    label Gênero
+    combo-box(data-model="user.genre",
+              data-name="genre"
+              data-options="user.arrays.genre")
+
+  div.inputcontainer_middle
+    label(for="phone") Telefone
+    input.inputtext_default(type="text",
+                            name="phone",
+                            data-ng-model="user.phone",
+                            placeholder="(00) 0000-0000",
+                            data-mask="(99) 9999-9999",
+                            data-mask-validate="false",
+                            data-mask-clean="true",
+                            data-mask-restrict="reject",
+                            minlength="14",
+                            required)
+    div.messages-container(data-ng-messages="registerForm.phone.$error",
+                           data-ng-if="registerForm.phone.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.inputcontainer_middle
+    label(for="cell") Celular
+    input.inputtext_default(type="text",
+                            name="cell",
+                            data-ng-model="user.cell",
+                            placeholder="(00) 00000-0000",
+                            data-mask="(99) 99999-9999",
+                            data-mask-validate="false",
+                            data-mask-clean="true",
+                            data-mask-restrict="reject",
+                            minlength="15",
+                            required)
+    div.messages-container(data-ng-messages="registerForm.cell.$error",
+                           data-ng-if="registerForm.cell.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.title Dados de contato
+  div.inputcontainer_middle
+    label(for="cep") CEP
+    input.inputtext_default(type="text",
+                            name="cep",
+                            data-ng-model="user.cep",
+                            placeholder="00000-000",
+                            data-mask="99999-999",
+                            data-mask-validate="false",
+                            data-mask-clean="true",
+                            data-mask-restrict="reject",
+                            minlength="9",
+                            data-ng-blur="autoCompleteAddress(user.cep)"
+                            required)
+    div.messages-container(data-ng-messages="registerForm.cep.$error",
+                           data-ng-if="registerForm.cep.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.inputcontainer_middle
+    label(for="addrees") Endereço
+    input.inputtext_default(type="text",
+                            name="addrees",
+                            data-ng-model="user.addrees",
+                            placeholder="Ex: Rua da casa zero",
+                            data-mask="~",
+                            data-mask-validate="false",
+                            data-mask-clean="true",
+                            data-mask-restrict="reject",
+                            data-mask-repeat="100",
+                            minlength="5",
+                            required)
+    div.messages-container(data-ng-messages="registerForm.addrees.$error",
+                           data-ng-if="registerForm.addrees.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.inputcontainer_middle
+    label(for="number") Número
+    input.inputtext_default(type="text",
+                            name="number",
+                            data-ng-model="user.number",
+                            placeholder="Ex: 001",
+                            data-mask="9",
+                            data-mask-validate="false",
+                            data-mask-clean="true",
+                            data-mask-restrict="reject",
+                            data-mask-repeat="6",,
+                            required)
+    div.messages-container(data-ng-messages="registerForm.number.$error",
+                           data-ng-if="registerForm.number.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.inputcontainer_middle
+    label(for="complement") Complemento (Opcional)
+    input.inputtext_default(type="text",
+                            name="complement",
+                            data-ng-model="user.complement",
+                            placeholder="Ex: apto 62",
+                            data-mask="&",
+                            data-mask-validate="false",
+                            data-mask-clean="true",
+                            data-mask-restrict="reject",
+                            data-mask-repeat="20",
+                            minlength="3")
+    div.messages-container(data-ng-messages="registerForm.complement.$error",
+                           data-ng-if="registerForm.complement.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.inputcontainer_middle
+    label Estado
+    combo-box(data-model="user.uf",
+              data-name="uf"
+              data-options="user.arrays.uf")
+
+  div.inputcontainer_middle
+    label(for="city") Cidade
+    input.inputtext_default(type="text",
+                            name="city",
+                            data-ng-model="user.city",
+                            placeholder="Ex: São Paulo",
+                            data-mask="~",
+                            data-mask-validate="false",
+                            data-mask-clean="true",
+                            data-mask-restrict="reject",
+                            data-mask-repeat="50",
+                            minlength="5",
+                            required)
+    div.messages-container(data-ng-messages="registerForm.city.$error",
+                           data-ng-if="registerForm.city.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.inputcontainer_full
+    label(for="district") Bairro
+    input.inputtext_default(type="text",
+                            name="district",
+                            data-ng-model="user.district",
+                            placeholder="Ex: Itaquera",
+                            data-mask="~",
+                            data-mask-validate="false",
+                            data-mask-clean="true",
+                            data-mask-restrict="reject",
+                            data-mask-repeat="50",
+                            minlength="5",
+                            required)
+    div.messages-container(data-ng-messages="registerForm.district.$error",
+                           data-ng-if="registerForm.district.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.title Dados escolares
+  div.inputcontainer_middle
+    label Estuda atualmente?
+    combo-box(data-model="user.study",
+              data-name="study"
+              data-options="user.arrays.study")
+
+  div.inputcontainer_middle
+    label Nível de escolaridade
+    combo-box(data-model="user.schooling",
+              data-name="schooling"
+              data-options="user.arrays.schooling")
+
+  div.inputcontainer_middle(data-ng-if="showScholarityField()")
+    label(for="institution") Nome da instituição
+    input.inputtext_default(type="text",
+                            name="institution",
+                            data-ng-model="user.institution",
+                            placeholder="Ex: Universidade de São Paulo",
+                            data-mask="~",
+                            data-mask-validate="false",
+                            data-mask-clean="true",
+                            data-mask-restrict="reject",
+                            data-mask-repeat="50",
+                            minlength="5",
+                            required)
+    div.messages-container(data-ng-messages="registerForm.institution.$error",
+                           data-ng-if="registerForm.institution.$touched && !submitted")
+      div(ng-messages-include="partials/main/messages-validation")
+
+  div.inputcontainer_middle(data-ng-if="showScholarityField()")
+    label Tipo de instuição
+    combo-box(data-model="user.institutionType",
+              data-name="institutionType"
+              data-options="user.arrays.institutionType")
+
+
+  div.title Dados complementares
+  div.description Informe áreas de seu interesse para enviarmos promoções de acordo com o seu perfil.
+  div.checkcontainer
+    div.item(data-ng-repeat="area in user.arrays.areasInterest")
+      input.checkbox(type="checkbox",
+                     data-ng-model="user.areasInterestModel[area]"
+                     id="{{area}}",
+                     data-ng-click="toggleInterestArea(area)")
+      label.label(for="{{area}}") {{area}}
+
+  div.inputcontainer_full
+    label Como conheceu o Coletivo?
+    combo-box(data-model="user.howmet",
+              data-name="howmet"
+              data-options="user.arrays.howmet")
+
+  div.button
+    input.inputsubmit(type="submit",
+                      data-ng-if="!logged"
+                      value="Cadastrar"
+                      data-ng-disabled="registerForm.$invalid",
+                      data-ng-class="{'inputsubmit_disabled': registerForm.$invalid}")
+
+    input.inputsubmit(type="submit",
+                      data-ng-if="logged && !enableCheckout"
+                      value="Salvar"
+                      data-ng-disabled="registerForm.$invalid",
+                      data-ng-class="{'inputsubmit_disabled': registerForm.$invalid}")
+
+    input.inputsubmit(type="submit",
+                      data-ng-if="enableCheckout"
+                      value="Prosseguir"
+                      data-ng-disabled="registerForm.$invalid",
+                      data-ng-class="{'inputsubmit_disabled': registerForm.$invalid || clicked}")

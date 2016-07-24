@@ -1,0 +1,100 @@
+.page-container
+  > .bannercourses
+    > .text
+      > .title
+        text-align center
+        font-size em(44px)
+
+      >.phrase
+        font-size em(28px)
+        margin-top 0
+        @media(min-width: em(400px))
+          font-size em(35px)
+          margin-top 0
+        @media(min-width: em(800px))
+          font-size em(40px)
+          margin-top 70px
+
+    > .foreground
+      width 100%
+      height $bannerHeight
+      background #000
+      opacity 0.75
+      position absolute
+      z-index 9
+
+    > .image
+      height $bannerHeight
+
+.courses
+  @extends .page-section
+
+  > .message-courses-empty
+    width 100%
+    font-size em(20px)
+    color $accentColor
+    text-align center
+    padding 30px 0
+    @media(min-width: em(800px))
+      font-size em(25px)
+      padding 60px 0
+
+  > .container
+    width 100%
+    @media (min-width: em(800px))
+      display flex
+      justify-content space-around
+      flex-wrap wrap
+      padding 0 3%
+
+    > .item
+      width 100%
+      height 100%
+      margin-top 10%
+      position relative
+      font-size 100%
+      font-family "roboto light"
+      transition all .2s linear
+      @media (min-width: em(800px))
+        margin-top 3%
+        width 48%
+      @media (min-width: em(1024px))
+        width 30%
+      &:hover
+        transition all .2s linear
+        cursor pointer
+        transform scale(1.07)
+
+      > .banner
+        width 100%
+        height 211px
+        overflow hidden
+
+        > .image
+          width 100%
+
+      > .labelname
+        width 100%
+        min-height 50px
+        padding-top 10px
+        padding-bottom 10px
+        font-size em(22px)
+
+      > .divisor
+        width 100%
+        height 1px
+        background #333
+
+      > .labelcategory
+        width 100%
+        height 40px
+        line-height 40px
+        font-size em(18px)
+        color $primaryTextColor
+
+      > .value
+        margin-top 10px
+        display block
+        font-size em(20px)
+        color $accentColor
+        font-family 'roboto medium'

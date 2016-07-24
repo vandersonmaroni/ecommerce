@@ -1,0 +1,35 @@
+div.checkout
+  div.flow-component
+    div.state.selected  Checkout
+    div.state Pagamento
+      div.arrow
+        div.fristriangle
+        div.secondtriangle
+
+  div.detailing
+    div.cartlist
+      div.title Pedido
+      div.item
+        ul.listfild
+          li.fild
+            span.name Curso
+            span.value(data-ng-bind="order.course.name")
+          li.fild.fild_margin
+            span.name Início
+            span.value(data-ng-bind="(order.course.class.beginDate | date: dd/MMM/yyyy)")
+          li.fild.fild_margin
+            span.name Preço
+            span.value(data-ng-bind="(order.course.price | currency:$)")
+
+    div.info Atualize seus dados cadastrais para finalizar a compra
+
+    register-form(data-user="user", data-save="updateUser(user)",
+                  data-hide-fields="false",
+                  data-enable-checkout="true",
+                  data-clicked="clicked")
+
+    div.purchaseMessage(data-ng-if="purchaseMessage") {{purchaseMessage}}
+
+show-message(data-show="message.show",
+             data-nivel="message.nivel",
+             data-text="message.text")

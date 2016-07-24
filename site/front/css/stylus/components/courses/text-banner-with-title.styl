@@ -1,0 +1,30 @@
+.text-banner-with-title
+  width 100%
+  height $bannerHeight
+  position absolute
+  padding-top $topBarMenuHeightMobile
+  color #FFF
+  z-index 11
+  padding-left 10%
+  padding-right 10%
+  text-align center
+
+  > .title
+    text-align center
+    font-size em(40px)
+    margin-top 55px
+    @media(min-width: em(400px))
+      font-size em(48px)
+    @media(min-width: em(800px))
+      font-size em(48px)
+      margin-top 45px
+
+  >.phrase
+    font-size em(22px)
+    margin 0
+    @media(min-width: em(400px))
+      font-size em(26px)
+    @media(min-width: em(800px))
+      font-size em(30px)
+    @media(min-width: em(1024px))
+      font-size em(38px)

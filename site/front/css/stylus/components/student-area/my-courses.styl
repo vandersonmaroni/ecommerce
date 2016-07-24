@@ -1,0 +1,98 @@
+.my-courses
+  margin-top $topBarMenuHeightDesktop + 40px
+  padding 0 25px
+  @media(min-width: em(800px))
+    padding 0 75px
+  @media(min-width: em(1200px))
+    padding 0 150px
+
+  > .course-container
+    > .course-item
+      border 3px solid $lightPrimaryColor
+      margin-bottom 20px
+      padding 15px
+      @media(min-width: em(800px))
+        padding 30px
+        padding-bottom 20px
+        margin-bottom 35px
+
+      @media(min-width: em(1200px))
+        padding 30px
+        margin-bottom 50px
+
+      .section
+        > .namefeatured
+          display block
+          font-size em(25px)
+          font-family 'roboto medium'
+          word-wrap break-word
+          color #999
+          margin-top 5px
+          margin-bottom 10px
+          @media(min-width: em(1200px))
+            font-size em(32px)
+          @media(min-width: em(1450px))
+            font-size em(40px)
+
+        > .label
+          display block
+          font-size em(18px)
+          font-family 'roboto light'
+          color $secondaryTextColor
+          @media(min-width: em(1200px))
+            font-size em(20px)
+          @media(min-width: em(1450px))
+            font-size em(24px)
+
+        > .name
+          display block
+          font-size em(22px)
+          font-family 'roboto medium'
+          word-wrap break-word
+          color #999
+          margin-top 5px
+          margin-bottom 10px
+          @media(min-width: em(1200px))
+            font-size em(26px)
+          @media(min-width: em(1450px))
+            font-size em(30px)
+
+      > .sectiongroup
+        margin 10px 0
+        @media(min-width: em(500px))
+          display flex
+          justify-content space-between
+        @media(min-width: em(800px))
+          justify-content flex-start
+
+        > .section
+          @media(min-width: em(800px))
+            margin-right 20%
+
+      > .divider
+        height 1px
+        margin 15px 0;
+        background $lightPrimaryColor
+
+      > .title
+        font-size em(25px)
+        color #333
+        margin-bottom 10px
+        @media(min-width: em(1450px))
+          font-size em(30px)
+
+    > .message
+      min-height 400px
+      line-height 350px
+      font-size em(25px)
+      font-family 'roboto light'
+      color $secondaryTextColor
+      text-align center
+      @media(min-width: em(750px))
+        font-size em(28px)
+      @media(min-width: em(1100px))
+        padding 0 40px
+        font-size em(32px)
+      @media(min-width: em(1100px))
+        padding 0 40px
+        font-size em(35px)

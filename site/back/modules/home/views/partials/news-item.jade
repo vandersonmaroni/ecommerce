@@ -1,0 +1,13 @@
+div.item
+  div.grid
+    div.media
+      video.video(src="https://player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4",
+                  controls="true",
+                  data-ng-if="new.type === 'video'")
+      img.image(data-ng-src="/build/images/default/home/{{new.media}}"
+                data-ng-if="new.type === 'image'")
+    div.description
+      div.title(data-ng-bind="new.title")
+      div.date(data-ng-bind="new.date")
+      div.text(data-ng-bind="new.description")
+      a.link(data-ng-href="{{new.link}}", target="_blank") Saiba mais

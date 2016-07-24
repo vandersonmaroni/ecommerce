@@ -1,0 +1,118 @@
+.course-detailing
+  width 100%
+  padding 20px
+  margin-top 10px
+  @media(min-width: em(800px))
+    padding 0 40px
+    margin-top 40px
+
+  > .name
+    min-height 40px
+    width 100%
+    font-size em(25px)
+    text-align left
+    color $secondaryTextColor
+    @media(min-width: em(800px))
+      font-size em(40px)
+
+  > .container
+    width 100%
+    margin-top 15px
+    @media(min-width: em(800px))
+      display flex
+      align-content center
+      margin-top 30px
+
+    > .containerimage
+      width 100%
+      padding 2px
+      @media(min-width: em(800px))
+        width 48%
+        height 375px
+        overflow hidden
+      @media(min-width: em(1250px))
+        height 400px
+
+      > .image
+        @media(min-width: em(800px))
+          width auto
+          height 100%
+          position relative
+          left -8%
+        @media(min-width: em(1440px))
+          left 0
+
+
+    > .datasell
+      width 100%
+      margin-top 30px
+      @media(min-width: em(800px))
+        width 48%
+        margin-left 4%
+        margin-top 0
+      @media(min-width: em(1440px))
+        margin-left 2%
+
+      > .section
+        width 100%
+
+        > .label
+          color $dividerColor
+          font-size em(18px)
+
+        > .name
+          display block
+          margin-top 10px
+          margin-bottom 10px
+          font-size em(40px)
+          color $secondaryTextColor
+          @media(min-width: em(800px))
+            font-size em(32px)
+            margin-top 6px
+            margin-bottom 6px
+          @media(min-width: em(1250px))
+            margin-top 10px
+            margin-bottom 10px
+            font-size em(40px)
+
+      > .logospayments
+        margin-top 6px
+        margin-bottom 6px
+        @media(min-width: em(800px))
+          margin-top 10px
+          margin-bottom 10px
+
+        > .logo
+          height 30px
+          width 160px
+
+  > .detailing
+    font-size em(18px)
+    line-height 30px
+    @media(min-width: em(800px))
+     padding 0 30px
+    @media(min-width: em(800px))
+      padding 0 50px
+
+    > .title
+      font-size em(25px)
+      font-family "roboto"
+      margin-bottom 10px
+      margin-top 20px
+      color $accentColor
+      @media(min-width: em(800px))
+        margin-top 40px
+
+    > .text
+      font-size em(16px)
+      font-family "roboto light"
+      color $primaryTextColor
+
+    > .list
+      margin-left 22px
+      list-style disc outside none
+      margin-top 10px
+      margin-bottom 10px
+
+      > .item
+        margin-top 5px

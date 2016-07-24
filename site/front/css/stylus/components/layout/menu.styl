@@ -1,0 +1,174 @@
+.menu
+  width 100%
+  height $topBarMenuHeightMobile
+  background $primaryColor
+  position fixed
+  left 0
+  bottom 0
+  z-index 20
+  @extends $grid-between
+  @media (min-width: em(800px))
+    height $topBarMenuHeightDesktop
+    top 0
+    background transparent
+    width 60%
+    left 175px
+
+  > .list
+    width 100%
+    height $topBarMenuHeightMobile
+    display flex
+    justify-content space-between
+    @media (min-width: em(800px))
+      height $topBarMenuHeightDesktop
+      justify-content flex-start
+
+    > .item
+      width 60px
+      position relative
+      @media (min-width: em(800px))
+        width auto
+        padding-top 17px
+        margin-left 15px
+        @media (min-width: em(1024px))
+          margin-left 20px
+        @media (min-width: em(1366px))
+          margin-left 30px
+
+      > .link
+        display block
+        height $topBarMenuHeightMobile
+        @media (min-width: em(800px))
+          height auto
+          display flex
+          justify-content space-between
+          transition all .1s linear
+        &:hover
+          border-bottom 2px solid #FFF
+          transition all .1s linear
+
+        > .icon
+          width 100%
+          height 35px
+          fill #fff
+          margin-top 3px
+          @media (min-width: em(800px))
+            width 30px
+            height 30px
+            margin-top 0px
+          @media (min-width: em(1440px))
+            width 37px
+            height 37px
+
+        > .icon-contact
+          width 28px
+          margin-top 5px
+          margin-left 25px
+          @media (min-width: em(800px))
+            width 26px
+            margin-top 2px
+            margin-left 0
+          @media (min-width: em(1440px))
+            width 33px
+
+        > .arrow
+          width 50px
+          height 50px
+
+        > .label
+          position absolute
+          bottom 6px
+          width 100%
+          text-align center
+          color #FFF
+          font-size em(12px)
+          @media (min-width: em(800px))
+            position static
+            margin-top 10px
+          @media (min-width: em(1024px))
+            font-size em(14px)
+          @media (min-width: em(1440px))
+            font-size em(17px)
+
+    > ._restrict
+      width 80px
+      @media (min-width: em(800px))
+        width auto
+
+    > .partners
+      width 75px
+      background $primaryColor
+      right 0
+      margin-top -60px
+      opacity 0
+      visibility hidden
+
+    > .teachers
+      width 75px
+      background $primaryColor
+      right 0
+      margin-top -120px
+      opacity 0
+      visibility hidden
+
+    > .contact
+      width 75px
+      background $primaryColor
+      right 0
+      margin-top -180px
+      opacity 0
+      visibility hidden
+
+
+    > .sigin
+      @media (min-width: em(800px))
+        position absolute
+        right -20%
+      @media (min-width: em(1024px))
+        right -27%
+      @media (min-width: em(1200px))
+        right -32%
+      @media (min-width: em(1366px))
+        right -35%
+      @media (min-width: em(1440px))
+        right -37%
+      @media (min-width: em(1600px))
+        right -40%
+
+    > .action
+      width 75px
+      padding 13px
+      padding-top 5px
+
+  .linkselected
+    background #FFF
+    border-top 1px solid $primaryColor
+    @media (min-width: em(800px))
+      border-top none
+      border-bottom 2px solid #FFF
+      background transparent
+    > .icon
+      fill $primaryColor !important
+      @media (min-width: em(800px))
+        fill #FFF !important
+    > .label
+      color $primaryColor !important
+      @media (min-width: em(800px))
+        color #FFF !important
+
+  .-order1
+    order 1
+  .-order2
+    order 2
+  .-order3
+    order 3
+  .-order4
+    order 4
+  .-order5
+    order 5
+  .-order6
+    order 6
+  .-order7
+    order 7
+  .-order8
+    order 8

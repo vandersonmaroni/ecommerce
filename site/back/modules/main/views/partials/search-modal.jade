@@ -1,0 +1,23 @@
+div.search-container(data-ng-show="showModal")
+  svg.close(viewBox="0 0 48 48", data-ng-click="closeModal()")
+    use(xlink:href="/build/images/default/layout/icons.svg#icon-close", title="Fechar pesquisa")
+  h3.title Faça sua pesquisa
+  form.container(novalidate, data-ng-submit="search()")
+    input#input-search.inputtext.inputtext_default(data-ng-model="searchValue",
+                                      placeholder="Em cursos e novidades...")
+    button.buttoncontainer(type="submit", data-ng-show="isDesktop", title="Pesquisar")
+      svg.button(data-ng-click="search()", viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-search")
+  div.messageValidation(data-ng-show="messageValidation") {{messageValidation}}
+  div.result(data-ng-if="results")
+    div.title(data-ng-show="resultCount > 1") Foram encontrados {{resultCount}} resultados
+    div.title(data-ng-show="resultCount === 1") Foi encontrado {{resultCount}} resultado
+    div.title(data-ng-show="resultCount === 0") Nenhum resultado foi encontrado
+    div.divisor
+    div.container
+      ul.list
+        li.item(data-ng-repeat="result in results track by result._id",
+                data-ng-click="resultClick(result)")
+          div(data-ng-bind="(result.searchType === 'course') ? result.name : result.title")
+          div.itemtype(data-ng-show="result.searchType === 'course'") Curso
+          div.itemtype(data-ng-show="result.searchType !== 'course'") Novidade

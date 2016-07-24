@@ -1,0 +1,20 @@
+section.page-container
+  div.bannercourses
+    div.text-banner-with-title
+      h1.title(data-ng-bind="category.name")
+      h2.phrase(data-ng-bind="category.pageCapition")
+    div.foreground
+    img.image(data-ng-src="/build/images/{{device}}/courses/{{category.pageImageBanner}}", alt="Banner Courso")
+
+
+section.courses
+  div.main-title
+    h2.title Cursos
+    div.title-divisor
+  courses-core-filter(data-system-uri="systemUri")
+  div.container(data-ng-if="!coursesEmpty")
+    course-item(data-ng-repeat="course in ::courses track by course._id",
+                  data-course="course")
+
+div.courses(data-ng-if="coursesEmpty")
+  div.message-courses-empty No momento não há cursos para o núcleo e a categoria selecionada.

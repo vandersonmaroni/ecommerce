@@ -1,0 +1,20 @@
+section.page-container
+  div.banner
+    div.text
+      h2.phrase {{pagePartners.pagePhrase}}
+    div.foreground
+    img.image(data-ng-src="/build/images/{{device}}/partners/{{pagePartners.pageImageBanner}}", alt="Banner Parceiros")
+
+section.parceiros
+  div.main-title
+    h2.title Parceiros
+    div.title-divisor
+
+  div.container
+    div.partner-item(data-ng-repeat="partner in ::pagePartners.partners track by $index")
+      div.logo
+        img(data-ng-src="/build/images/default/partners/{{partner.logo}}", alt="Logo parceiro")
+      div.name {{partner.name}}
+      div.dividerfil
+      div.description {{partner.description}}
+      a.link(data-ng-href="{{partner.url}}", target="_blank") {{partner.url}}

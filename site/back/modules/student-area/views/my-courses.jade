@@ -1,0 +1,44 @@
+section.my-courses
+  div.main-title
+    h2.title Meus cursos
+    div.title-divisor
+
+  div.course-container
+    div.course-item(data-ng-repeat='order in ::orders track by $index')
+      div.section
+        span.label Curso
+        span.namefeatured(data-ng-bind='order.course.name')
+
+      div.sectiongroup
+        div.section
+          span.label Categoria
+          span.name(data-ng-bind='order.course.category.name')
+        div.section
+          span.label Núcleo
+          span.name(data-ng-bind='order.course.core.name')
+        div.section
+          span.label Data de início
+          span.name(data-ng-bind='order.course.class.beginDate | date: dd/MMM/yyyy')
+
+      div.divider
+
+      div.title Informações do pagamento
+
+      div.section
+        span.label Identificador
+        span.name(data-ng-bind='order.transactionCode')
+
+      div.section
+        span.label Date e hora
+        span.name(data-ng-bind="order.datePurchase | date: 'dd-MM-yyyy HH:mm:ss'")
+
+      div.sectiongroup
+        div.section
+          span.label Pagamento
+          span.name(data-ng-style='{color: order.status.color}', data-ng-bind='order.status.display')
+        div.section
+          span.label Valor Total
+          span.name(data-ng-bind="order.course.price | currency:'R$'")
+
+    div.message(data-ng-bind='message')
+

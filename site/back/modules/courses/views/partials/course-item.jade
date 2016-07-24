@@ -1,0 +1,13 @@
+div.item(data-ng-click="goToCourseDetailing(course)" ,
+         title="Clique para saber mais sobre o curso")
+  div.banner
+    img.image(data-ng-src="/build/images/default/courses/{{course.image}}", alt="Banner Courso")
+  div.labelname(data-ng-style="{color: course.category.backgroundColor}",
+                data-ng-bind="course.name")
+  div.divisor
+  div.labelcategory(data-ng-bind="course.core.name")
+  div.divisor
+  div.labelcategory(data-ng-bind="course.category.name")
+  div.divisor(data-ng-if="logged()")
+  div.value(data-ng-if="logged()",
+            data-ng-bind="course.price | currency:$")

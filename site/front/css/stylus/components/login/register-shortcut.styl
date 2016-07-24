@@ -1,0 +1,40 @@
+.registershortcut
+  width 100%
+  border-top 1px solid $accentColor
+  margin-top 30px
+  padding-top 30px
+  font-family "roboto light"
+  @media(min-width: em(800px))
+    width 48%
+    margin-top 0
+    border-top none
+    border-left 1px solid $accentColor
+    padding 30px 3%
+  @media(min-width: em(1600px))
+    padding 0 6%
+
+  > .text
+    font-size em(16px)
+    color $primaryTextColor
+    @media(min-width: em(800px))
+      font-size em(18px)
+      line-height 26px
+
+  > .container
+    @media(min-width: em(1024px))
+      width 415px
+      margin 0 auto
+
+    > .button
+      width 100%
+      height 60px
+      color #FFF
+      background #8E2424
+      margin-top 30px
+      @media(min-width: em(1024px))
+        width 415px
+        height 70px
+        font-size em(20px)
+      &:hover
+        transition all .2s linear
+        transform scale(1.05)

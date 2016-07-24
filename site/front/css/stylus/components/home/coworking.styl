@@ -1,0 +1,65 @@
+.coworking
+  width 100%
+  background #E18659
+  padding-top 20px
+  padding-bottom 30px
+  margin-top 30px
+  font-family "roboto light"
+  @extends .page-section
+  @media (min-width: em(800px))
+    padding-left 30px
+    padding-right 30px
+    margin-top 60px
+
+  > .main-title
+    > .title
+      color #FFF
+    > .title-divisor
+      background #FFF
+
+  > .imagescontainer
+    width 100%
+    @media (min-width: em(800px))
+      display flex
+      justify-content space-around
+
+    > .item
+      width 100%
+      background #FFF
+      padding 5%
+      margin-top 30px
+      @media (min-width: em(800px))
+        margin-top 0
+        padding 1%
+        width 30%
+
+      > .image
+        width 98%
+        margin-top 3px
+        margin-left 1%
+
+  > .text
+    font-size em(18px)
+    color #FFF
+    margin 30px auto 0 auto
+    @media (min-width: em(800px))
+      font-size em(22px)
+      width 80%
+      margin-top 60px
+
+  > .link
+    width 200px
+    text-align center
+    font-size em(25px)
+    text-decoration underline
+    margin 30px auto
+    color #FFF
+    font-family "roboto"
+    @media (min-width: em(800px))
+      margin 60px auto
+      font-size em(30px)
+    &:hover
+      text-decoration none
+      cursor pointer
+    > a
+      color #FFF

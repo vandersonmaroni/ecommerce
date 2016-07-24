@@ -1,0 +1,47 @@
+.page-container
+  width 100%
+  height $bannerHeight
+
+  > .banner
+    width 100%
+    height $bannerHeight
+    overflow hidden
+    display block
+
+    > .text
+      width 100%
+      height $bannerHeight
+      position absolute
+      padding-top $topBarMenuHeightMobile
+      color #FFF
+      z-index 11
+      padding-left 10%
+      padding-right 10%
+
+      > .phrase
+        margin-top 25px !important
+        font-size em(25px)
+        @media(min-width: em(400px))
+          margin-top 50px !important
+          font-size em(27px)
+        @media(min-width: em(800px))
+          font-size em(32px)
+          margin-top 65px !important
+        @media(min-width: em(1300px))
+          font-size em(37px)
+          margin-top 75px !important
+        @media(min-width: em(1400px))
+          font-size em(43px)
+          margin-top 75px !important
+
+    > .foreground
+      width 100%
+      height $bannerHeight
+      background #000
+      opacity 0.75
+      position absolute
+      z-index 9
+
+    > .image
+      width auto
+      height $bannerHome

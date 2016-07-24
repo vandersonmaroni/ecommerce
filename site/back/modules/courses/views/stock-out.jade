@@ -1,0 +1,16 @@
+div.buy-component
+  div.price
+    span.label Preço
+    span.value(data-ng-bind="course.price | currency:$")
+  div.buttonactions
+    div.useterms
+      input.term(type="checkbox", id="useterms", name="useterms", data-ng-model="checkboxTerms.accept")
+      label(for="useterms") Li e aceito os
+      a.link(href="https://drive.google.com/file/d/0ByN935CoRvxNcWFTaUZYUGRGZDQ/view?usp=sharing", target="_blank") termos
+    button.stockout(data-ng-if="!course.unavailable",
+                    title="As vagas para esse curso acabaram",
+                    data-ng-disabled='true') Esgotado
+
+    button.stockout(data-ng-if="course.unavailable",
+                    course.unavailabletitle="As vagas serão abertas em breve",
+                    data-ng-disabled='true') Em breve

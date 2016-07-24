@@ -1,0 +1,15 @@
+div.item
+  div.grid
+    div.image
+      img(data-ng-src="/build/images/default/persons/{{person.image}}")
+    div.info
+      div.name(data-ng-bind="person.name")
+      div.divisor
+      div.description(data-ng-bind="person.description")
+      div.socials
+        a.link(data-ng-href="{{person.facebook}}", target="_blank")
+          svg.icon(viewBox="0 0 48 48")
+            use(xlink:href="/build/images/default/layout/icons.svg#icon-facebook")
+        a.link(data-ng-href="{{person.twitter}}", target="_blank")
+          svg.icon.icon_margin(viewBox="0 0 48 48")
+            use(xlink:href="/build/images/default/layout/icons.svg#icon-twitter")

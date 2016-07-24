@@ -1,0 +1,13 @@
+section.page-container
+  div.banner
+    div.text
+      h2.phrase “Ensinar não é transferir conhecimento, mas criar as possibilidades para a sua própria produção” - Paulo Freire
+    div.foreground
+    img.image(data-ng-src="/build/images/{{device}}/teacher/teacher-banner.jpg", alt="Banner Courso")
+
+section.person-display
+  div.main-title
+    h2.title Professores
+    div.title-divisor
+  person-display(data-ng-repeat="teacher in ::teachers track by teacher._id",
+                 data-person="teacher")

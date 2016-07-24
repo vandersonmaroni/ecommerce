@@ -1,0 +1,11 @@
+section.page-container
+  div.banner
+    div.text
+      h2.phrase Uma vida boa é aquela inspirada pelo amor e guiada pelo conhecimento - Bertrand Russell
+    div.foreground
+    img.image(data-ng-src="/build/images/{{device}}/cores/cores-banner.jpg", alt="Banner Courso")
+
+section.cores
+  core(data-ng-repeat="core in cores track by core._id",
+       data-core="core",
+       data-system-uri="systemUri")

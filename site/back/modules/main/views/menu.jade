@@ -1,0 +1,87 @@
+nav.menu(data-ng-controller="MenuController")
+  ul.list(data-ng-if="!restrictMenu()")
+    li.item.-order1
+      a.link(data-ng-href="{{systemUri.coursesCategory()}}", data-hide-menu, data-selected-menu)
+        svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-courses")
+        div.label Cursos
+
+    li.item.-order2
+      a.link(data-ng-href="{{systemUri.aboutUs()}}", data-hide-menu, data-selected-menu)
+        svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-about-us")
+        div.label(data-ng-if="isMobile") Sobre
+        div.label(data-ng-if="isDesktop") Quem somos
+
+    li.item.-order3
+      a.link(data-ng-href="{{systemUri.cores()}}", data-hide-menu, data-selected-menu)
+        svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-cores")
+        div.label Núcleos
+
+    li.item.sigin(data-ng-class="{'-order4': isMobile, '-order7': isDesktop}")
+      a.link(data-ng-href="{{systemUri.sigin()}}", data-hide-menu, data-selected-menu)
+        svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#sign-in")
+        div.label(data-ng-if="isDesktop") Área do aluno
+        div.label(data-ng-if="isMobile") Login
+
+    li.item.action.-order5(data-ng-if="isMobile && menuMobileClose",
+                           data-ng-click="openMenu()")
+      a.link(data-toggle-component
+             data-target-class="menu-item-mobile")
+        svg.icon.arrow(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-arrow-up")
+
+    li.item.action.-order5(data-ng-if="isMobile && !menuMobileClose",
+                           data-ng-click="closeMenu()")
+      a.link(data-toggle-component
+             data-target-class="menu-item-mobile")
+        svg.icon.arrow(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-arrow-down")
+
+    li.item.menu-item-mobile(data-ng-class="{'-order6': isMobile, '-order4': isDesktop, '_absolute': isMobile, 'partners': isMobile}")
+      a.link(data-ng-href="{{systemUri.partners()}}", data-hide-menu, data-selected-menu)
+        svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-partners")
+        div.label Parceiros
+
+    li.item.menu-item-mobile(data-ng-class="{'-order7': isMobile, '-order5': isDesktop, '_absolute': isMobile, 'teachers': isMobile}")
+      a.link(data-ng-href="{{systemUri.teachers()}}", data-hide-menu, data-selected-menu)
+        svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-teachers")
+        div.label Professores
+
+    li.item.menu-item-mobile.-order8(data-ng-class="{'_absolute': isMobile, 'contact': isMobile}")
+      a.link(data-ng-href="{{systemUri.contact()}}", data-hide-menu, data-selected-menu)
+        svg.icon.icon-contact(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-contact")
+        div.label Contato
+
+  ul.list(data-ng-if="restrictMenu()")
+    li.item._restrict.-order1
+      a.link(data-ng-href="{{systemUri.myCourses()}}", data-hide-menu, data-selected-menu)
+        svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-my-courses")
+        div.label Meus Cursos
+    li.item._restrict.-order2
+      a.link(data-ng-href="{{systemUri.coursesCategory()}}", data-hide-menu, data-selected-menu)
+        svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-courses")
+        div.label(data-ng-if="isMobile") Cursos
+        div.label(data-ng-if="isDesktop") Todos os cursos
+    li.item.-order3
+      a.link(data-ng-href="{{systemUri.cores()}}", data-hide-menu, data-selected-menu)
+        svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-cores")
+        div.label Núcleos
+    li.item._restrict.-order4
+      a.link(data-ng-href="{{systemUri.myAccount()}}", data-hide-menu, data-selected-menu)
+        svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-account")
+        div.label Minha Conta
+    li.item._restrict.sigin.-order5
+      a.link(data-hide-menu, data-selected-menu, data-ng-click="logout()")
+        svg.icon(viewBox="0 0 48 48")
+          use(xlink:href="/build/images/default/layout/icons.svg#icon-logout")
+        div.label Sair

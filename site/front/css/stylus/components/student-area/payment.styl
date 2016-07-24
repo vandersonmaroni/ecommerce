@@ -1,0 +1,67 @@
+.payment
+  margin-top $topBarMenuHeightDesktop + 40px
+  padding 0 25px
+  @media(min-width: em(800px))
+    padding 0 75px
+  @media(min-width: em(1200px))
+    padding 0 150px
+
+  > .main-title
+    > .title
+      margin 10px 0
+
+  > .payment-container
+    margin-top 20px
+
+    > .numeropedido
+      > .label
+        font-size em(25px)
+        font-family 'roboto light'
+        color $secondaryTextColor
+        text-align center
+        @media(min-width: em(1200px))
+          font-size em(22px)
+        @media(min-width: em(1450px))
+          font-size em(28px)
+
+      > .value
+        font-size em(20px)
+        font-family 'roboto medium'
+        text-align center
+        color #777
+        margin 10px 0
+        @media(min-width: em(1200px))
+          font-size em(26px)
+        @media(min-width: em(1450px))
+          font-size em(34px)
+
+    > .iconstatus
+      margin-top 20px
+      text-align center
+      > .image
+        width 200px
+        height 200px
+        @media(min-width: em(1450px))
+          width 200px
+          height 200px
+
+    > .statustransaction
+       font-size em(28px)
+       font-family 'roboto medium'
+       text-align center
+       color #777
+       margin 20px 0
+
+    > .instruction
+      font-size em(20px)
+      font-family 'roboto light'
+      color $secondaryTextColor
+      text-align center
+      @media(min-width: em(1200px))
+        font-size em(24px)
+
+      > .link
+        color $accentColor
+        &:hover
+          text-decoration underline
+          cursor pointer

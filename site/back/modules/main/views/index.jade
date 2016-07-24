@@ -1,0 +1,15 @@
+extends layout
+
+block body
+  section.splash(ng-cloak)
+    div.cssload-thecube
+      div.cssload-cube.cssload-c1
+      div.cssload-cube.cssload-c2
+      div.cssload-cube.cssload-c4
+      div.cssload-cube.cssload-c3
+    div.cssload-label Carregando...
+
+  include header
+  section(data-ng-view, ng-cloak)
+  include js
+  include footer

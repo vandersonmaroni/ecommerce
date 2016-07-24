@@ -1,0 +1,73 @@
+.categoria-item
+  height 350px
+  margin 30px 0
+  padding 10px
+  text-align center
+  color $textPrimaryColor
+  transition all .2s linear
+  @media(min-width: em(450px))
+    padding 20px
+  @media(min-width: em(800px))
+    width 47%
+    padding 15px 20px
+    margin 20px 0
+  @media(min-width: em(1024px))
+    margin 25px 0
+  @media(min-width: em(1300px))
+    width 45%
+    margin 30px 0
+  @media(min-width: em(1450px))
+    width 45%
+    height 400px
+    margin 30px 0
+  &:hover
+    transition all .2s linear
+    cursor pointer
+    transform scale(1.02)
+
+  > .title
+    width 100%
+    font-size em(40px)
+    margin-bottom 10px
+    font-family  "roboto"
+    @media(min-width: em(450px))
+      margin-bottom 30px
+    @media(min-width: em(800px))
+      margin-bottom 10px
+      font-size em(36px)
+      text-align left
+    @media(min-width: em(1024px))
+      font-size em(36px)
+    @media(min-width: em(1450px))
+      font-size em(40px)
+
+    > h3
+      margin 0
+
+    > .message
+      font-size em(8px)
+      font-family  "roboto light"
+
+
+  > .imagecover
+    fill #fff
+    width 180px
+    height 195px
+
+    @media(min-width: em(1450px))
+      width 200px
+      height 230px
+
+  > .phrase
+    font-size em(20px)
+    font-family  "roboto light"
+    text-align left
+    @media(min-width: em(1450px))
+      margin-top -8px
+      font-size em(24px)
+
+.categoria-item_disabled
+  background #ccc !important
+  cursor auto !important
+  &:hover
+    transform none

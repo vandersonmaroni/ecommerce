@@ -1,0 +1,14 @@
+section.page-container
+  div.banner
+    div.text
+      h2.phrase(data-ng-bind="categoryAreas.pagePhrase")
+    div.foreground
+    img.image(data-ng-src="/build/images/{{device}}/courses/{{categoryAreas.pageImageBanner}}", alt="Banner Courso")
+
+section.category-areas
+  div.main-title
+    h2.title Nossos cursos
+    div.title-divisor
+
+  dvi.container
+    category-item(data-ng-repeat="category in ::categoryAreas.categories track by category._id", data-category="category", data-mobile="isMobile")

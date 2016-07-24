@@ -1,0 +1,60 @@
+input, select, textarea
+  border none
+  padding 20px
+  font-family "roboto light"
+
+textarea:focus, input:focus
+  padding 20px
+  outline none
+
+.inputtext_default
+  width 100%
+  height 60px
+  border 1px solid #666
+  margin-top 10px
+  transition all 0.2s linear
+  color $primaryTextColor
+
+.inputtext_default:focus
+  transition all 0.2s linear
+  transform scale(1.01)
+
+.inputtext_default:focus:valid
+  transition all 0.2s linear
+  border 1px solid $inputFocusValid
+
+.inputtext_default:focus:invalid
+  transition all 0.2s linear
+  border 1px solid $inputFocusInvalid
+
+.inputsubmit_invalid
+  opacity .5
+  cursor auto
+
+.messages-container
+  position absolute
+  top 0
+  right -10px
+  z-index 2
+  opacity .95
+
+.messages_invalid
+  padding 0 20px
+  color #FFF
+  background $inputFocusInvalid
+  height 35px
+  line-height 35px
+
+.textarea_default
+  @extends .inputtext_default
+  height 150px
+
+
+.textarea_default:focus
+  @extends .inputtext_default:focus
+
+.textarea_default:focus:valid
+  @extends .inputtext_default:focus:valid
+
+.textarea_default:focus:invalid
+  @extends .inputtext_default:focus:invalid

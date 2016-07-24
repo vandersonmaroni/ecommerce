@@ -1,0 +1,78 @@
+section.login-container
+  div.main-title
+    h2.title Área do aluno
+    div.title-divisor
+
+  div.gridcontainers
+    section.logincontainer
+      form.form(novalidate, name="loginForm", data-ng-submit="login(user)")
+        div.inputcontainer_full
+          input.inputtext_default(type="text",
+                                  name="username",
+                                  data-ng-model="user.username",
+                                  placeholder="Usuário",
+                                  data-mask="~",
+                                  data-mask-validate="false",
+                                  data-mask-clean="true",
+                                  data-mask-restrict="reject",
+                                  data-mask-repeat="50",
+                                  minlength="5",
+                                  required)
+          div.messages-container(data-ng-messages="loginForm.username.$error",
+                                           data-ng-if="loginForm.username.$touched && !submitted")
+            div(ng-messages-include="partials/main/messages-validation")
+
+        div.inputcontainer_full(data-ng-if="passwordHide")
+          svg.icon(viewBox="0 0 48 48", data-ng-click="passwordToggle()")
+            use(xlink:href="/build/images/default/layout/icons.svg#icon-eye-visibility")
+          input.inputtext_default(type="password",
+                                  name="password",
+                                  data-ng-model="user.password",
+                                  placeholder="Senha",
+                                  maxlength="20",
+                                  minlength="5",
+                                  required)
+          div.messages-container(data-ng-messages="loginForm.password.$error",
+                                 data-ng-if="loginForm.password.$touched && !submitted")
+            div(ng-messages-include="partials/main/messages-validation")
+
+        div.inputcontainer_full(data-ng-if="!passwordHide")
+          svg.icon(viewBox="0 0 48 48", data-ng-click="passwordToggle()")
+            use(xlink:href="/build/images/default/layout/icons.svg#icon-visibility-off")
+          input.inputtext_default(type="text",
+                                  name="password",
+                                  data-ng-model="user.password",
+                                  placeholder="Senha",
+                                  maxlength="20",
+                                  minlength="6",
+                                  required)
+          div.messages-container(data-ng-messages="loginForm.password.$error",
+                                 data-ng-if="loginForm.password.$touched && !submitted")
+
+        div.gridbuttons
+          div.actions
+            div.link(data-ng-click="goToForgetPassword()") Esqueci minha senha
+            input.inputsubmit(value="Entrar",
+                              type="submit",
+                              data-ng-disabled="loginForm.$invalid",
+                              data-ng-class="{'inputsubmit_disabled': loginForm.$invalid}")
+          div.social
+            div.label Entrar com
+            div.grid
+              div.google(title="Google",
+                         data-ng-click="googleLogin()")
+                svg.icon(viewBox="0 0 48 48")
+                  use(xlink:href="/build/images/default/layout/icons.svg#icon-google")
+              div.facebook(title="Facebook",
+                           data-ng-click="fbLogin()")
+                svg.icon(viewBox="0 0 48 48")
+                  use(xlink:href="/build/images/default/layout/icons.svg#icon-facebook")
+    section.registershortcut
+      div.text Cadastre-se no site do Coletivo Educação para ficar por dentro de todas as novidades relacionadas à nossos núcleos e novas oportunidades de cursos e atividades. Usuários cadastrados em nosso site sabem primeiro de nossas promoções, atividades gratuitas e eventos. Não fique de fora dessa e venha fazer parte desta comunidade que é Coletivo!
+      div.container
+        button.button(data-ng-click="goToRegister()") Cadastre-se
+
+
+show-message(data-show="message.show",
+             data-nivel="message.nivel",
+             data-text="message.text")

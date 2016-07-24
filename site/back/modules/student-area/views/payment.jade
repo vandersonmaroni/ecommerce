@@ -1,0 +1,16 @@
+section.payment
+  div.main-title
+    h2.title Pedido realizado com sucesso
+
+  div.payment-container
+    div.numeropedido
+      div.label Código do pedido
+      div.value {{order._id}}
+
+    div.iconstatus
+      svg.image(viewBox="0 0 48 48", fill="{{order.status.color}}")
+        use(xlink:href="{{order.status.icon}}")
+    div.statustransaction(data-ng-bind="order.status.display")
+    div.instruction A confirmação do pedido foi enviada para seu email.
+      | &nbsp
+      a.link(data-ng-href="{{systemUri.coursesCategory()}}") Ver mais cursos.

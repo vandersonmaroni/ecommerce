@@ -1,0 +1,9 @@
+div.courses-cores-filter
+  div.container
+    div.item(data-ng-repeat="core in cores track by core._id",
+             data-ng-class="{'core_disabled': selectedCore !== core.path}",
+             data-ng-style="{background: core.buttonColor}",
+             data-ng-click="filter(core)",
+             data-ng-mouseenter="mouseenter($index, core)",
+             data-ng-mouseleave="mouseleave($index, core)",
+             title="Pesquisar somente cursos que sejam deste núcleo") {{core.name}}

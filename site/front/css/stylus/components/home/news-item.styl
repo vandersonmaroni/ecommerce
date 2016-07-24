@@ -1,0 +1,89 @@
+.news
+  width 100%
+  background #5669C5
+  padding-top 20px
+  padding-bottom 30px
+  margin-top 30px
+  @extends .page-section
+  @media (min-width: em(800px))
+    padding-left 30px
+    padding-right 30px
+    margin-top 60px
+
+  > .main-title
+    > .title
+      color #FFF
+    > .title-divisor
+      background #FFF
+
+  > .item
+    width 100%
+    background #FFF
+    margin-top 30px
+
+    > .grid
+      @media (min-width: em(1024px))
+        display flex
+        justify-content space-between
+
+      > .media
+        width 100%
+        background #FFF
+        @media (min-width: em(1024px))
+          margin-top 5px
+          margin-left 5px
+          width 40%
+
+        > .video
+          width 100%
+          height auto
+
+        > .image
+          @media (min-width: em(1024px))
+            width 100%
+            height auto
+
+      > .description
+        width 100%
+        position relative
+        font-size 100%
+        padding 20px
+        line-height 25px
+        @media (min-width: em(1024px))
+          width 60%
+          font-size 125%
+        @media (min-width: em(1440px))
+          font-size 145%
+        @media (min-width: em(1600px))
+          padding 25px
+          font-size 150%
+          line-height 30px
+
+        > .date
+          font-size em(18px)
+          color $secondaryTextColor
+          margin-top 3px
+          @media (min-width: em(800px))
+            position absolute
+            right 20px
+            top 20px
+
+        > .title
+          font-size em(22px)
+          color $primaryTextColor
+          @media (min-width: em(800px))
+            width 80%
+
+        > .text
+          font-size em(16px)
+          color $secondaryTextColor
+          margin-top 20px
+          font-family "roboto light"
+
+        > .link
+          margin-top 10px
+          color $accentColor
+          &:hover
+            color $primaryColor
+            text-decoration underline
+            cursor pointer

@@ -1,0 +1,34 @@
+section.page-container
+  div.banner
+    div.text
+      h2.phrase(data-ng-bind="aboutUs.pagePhrase")
+    div.foreground
+    img.image(data-ng-src="/build/images/{{device}}/about-us/{{aboutUs.pageImageBanner}}", alt="Banner Courso")
+
+section.our-mission
+  div.main-title
+    h2.title(data-ng-bind="aboutUs.missionTitle")
+    div.title-divisor
+  div.text(data-ng-bind="aboutUs.missionDescription")
+
+
+div.main-title
+  h2.title Áreas de Atuação
+  div.title-divisor
+section.areas-expertise
+  section.item(data-ng-repeat="area in ::aboutUs.occupationArea track by area._id")
+
+    div.title(data-ng-bind="area.name",
+              data-ng-style="{color: area.fontColor}")
+
+    div.divisor(data-ng-style="{background: area.fontColor}")
+
+    div.category(data-ng-repeat="segment in ::area.segments",
+                 data-ng-bind="segment.name")
+
+section.person-display
+  div.main-title
+    h2.title Colaboradores
+    div.title-divisor
+  person-display(data-ng-repeat="contributor in ::aboutUs.contributors track by contributor._id",
+                 data-person="contributor")

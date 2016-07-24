@@ -1,0 +1,27 @@
+.areas-expertise
+  @extends .page-section
+  font-family "roboto light"
+  @media (min-width: em(800px))
+    display flex
+    justify-content space-around
+    padding 0 50px
+
+  > .item
+    width 100%
+    font-size 100%
+    margin-top 30px
+    @media (min-width: em(800px))
+      width 20%
+
+    > .title
+      font-size em(25px)
+
+    > .divisor
+      width 100%
+      height 1px
+      margin 10px 0
+
+    > .category
+      font-size em(20px)
+      color $primaryTextColor
+      margin-top 5px

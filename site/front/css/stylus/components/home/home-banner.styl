@@ -1,0 +1,111 @@
+.home-container
+  width 100%
+  height $bannerHomeHeight
+
+  > .banner
+    width 100%
+    height $bannerHomeHeight
+    overflow hidden
+    display block
+
+    > .contents
+      width 100%
+      height $bannerHomeHeight
+      position absolute
+      padding-top $topBarMenuHeightMobile
+      color #FFF
+      z-index 11
+      padding-left 6%
+      padding-right 6%
+      @media (min-width: em(800px))
+        padding-top $topBarMenuHeightMobile
+        display flex
+        justify-content space-between
+        margin-top 10px
+
+      > .texts
+        width 100%
+        font-size 100%
+        @media (min-width: em(500px))
+          font-size 120%
+        @media (min-width: em(750px))
+          font-size 130%
+        @media (min-width: em(800px))
+          width 55%
+          font-size 150%
+        @media (min-width: em(1440px))
+          font-size 165%
+
+        > .title
+          font-size em(25px)
+          @media (min-width: em(800px))
+            width 80%
+            font-size em(30px)
+
+        > .phrase
+          font-size em(18px)
+
+      > .buttons
+        width 100%
+        font-size em(23px)
+        @media (min-width: em(800px))
+          width 40%
+          margin-top 75px
+
+        > .knowmore
+          width 100%
+          height 50px
+          background $accentColor
+          transition all 0.2s linear
+          text-align center
+          @media (min-width: em(500px))
+            height 55px
+          @media (min-width: em(800px))
+            width 390px
+            height 60px
+            position absolute
+            right 9%
+          @media (min-width: em(1400px))
+            right 11%
+            width 430px
+            height 70px
+          &:hover
+            transition all 0.2s linear
+            background $darkPrimaryColor
+
+        > .cores
+          width 100%
+          height 50px
+          margin-top 20px
+          background transparent
+          border 1px solid $accentColor
+          color $accentColor
+          transition all 0.2s linear
+          @media (min-width: em(500px))
+            height 55px
+          @media (min-width: em(800px))
+            width 390px
+            height 60px
+            position absolute
+            right 9%
+            margin-top 90px
+          @media (min-width: em(1400px))
+            right 11%
+            width 430px
+            height 70px
+          &:hover
+            transition all 0.2s linear
+            border 1px solid $darkPrimaryColor
+            color $darkPrimaryColor
+
+    > .foreground
+      width 100%
+      height $bannerHomeHeight
+      background #000
+      opacity 0.75
+      position absolute
+      z-index 9
+
+    > .image
+      width auto
+      height $bannerHomeHeight

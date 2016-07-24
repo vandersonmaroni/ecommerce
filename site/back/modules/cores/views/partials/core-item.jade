@@ -1,0 +1,19 @@
+div.core-container
+  h2.title(data-ng-bind="core.name",
+           data-ng-style="{color: core.buttonColor}")
+  div.container
+    div.media
+      video.video(src="http://player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4",
+                  controls="true",
+                  data-ng-if="core.type === 'video'")
+      img.image(data-ng-src="/build/images/default/cores/{{core.media}}"
+                data-ng-if="core.type === 'image'")
+    div.description
+      div.container(data-ng-bind-html="core.description")
+
+      div.grid
+        div.logo
+          img(data-ng-src="/build/images/default/cores/{{core.imageLogo}}")
+        div.buttoncontainer
+          button.button(data-ng-click="goToCourses(core)",
+                        data-ng-style="{background: core.buttonColor}") Nossos cursos

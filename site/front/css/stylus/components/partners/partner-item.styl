@@ -1,0 +1,48 @@
+.parceiros
+  padding 0 25px
+  @media(min-width: em(800px))
+    padding 0 50px
+  @media(min-width: em(1400px))
+    padding 0 75px
+  > .container
+    @media(min-width: em(800px))
+      display flex
+      justify-content space-around
+      flex-wrap wrap
+
+    > .partner-item
+      font-family 'roboto light'
+      margin-bottom 50px
+      @media(min-width: em(800px))
+        width 46%
+      @media(min-width: em(1200px))
+        width 31%
+
+      > .logo
+        border 2px solid #333
+
+      > .name
+        margin-top 20px
+        color $primaryColor
+        font-size em(27px)
+        @media(min-width: em(400px))
+          font-size em(36px)
+
+      > .divider
+        height 1px
+        margin 15px 0;
+        background $dividerColor
+
+      > .description
+        font-size em(18px)
+        margin-bottom 20px
+        @media(min-width: em(400px))
+          font-size em(20px)
+          margin-top 20px
+
+      > .link
+        color $darkAccentColor
+        font-size em(16px)
+        @media(min-width: em(400px))
+          font-size em(18px)
+
